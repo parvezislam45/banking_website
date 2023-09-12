@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class='text-3xl text-center'>Register</h1>
+<h1 class='text-3xl text-center'>{{request.user}}</h1>
+<!-- component -->
+<div class="grid min-h-screen place-items-center">
+    <div class="w-11/12 p-12 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
+      <h1 class="text-xl font-semibold">Hello there ?, <span class="font-normal">please fill in your information to continue</span></h1>
+      <form class="mt-6"method='post'>
+        {% csrf_token %}
+        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase w-60">User Name</label>
+        {{form.username}}
+        <div class="flex justify-between gap-3 mt-5">
+            
+          <span class="w-1/2">
+            <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Firstname</label>
+            {{form.first_name}}
+          </span>
+          <span class="w-1/2">
+            <label for="lastname" class="block text-xs font-semibold text-gray-600 uppercase">Lastname</label>
+          {{form.last_name}}
+          </span>
+        </div>
+        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+        {{form.email}}
+        <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+        {{form.password1}}
+        <label for="password-confirm" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Confirm password</label>
+        {{form.password2}}
+        <div class="flex justify-between gap-3 mt-5">
+            
+            <span class="w-1/2">
+              <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Gender</label>
+              {{form.gender}}
+            </span>
+            
+          </div>
+          <div class="flex justify-between gap-3 mt-5">
+            
+            <span class="w-1/2">
+              <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Address</label>
+              {{form.street_address}}
+            </span>
+            <span class="w-1/2">
+              <label for="lastname" class="block text-xs font-semibold text-gray-600 uppercase">City</label>
+            {{form.city}}
+            </span>
+          </div>
+          <div class="flex justify-between gap-3 mt-5">
+            
+            <span class="w-1/2">
+              <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Post Code</label>
+              {{form.postal_code}}
+            </span>
+            <span class="w-1/2">
+              <label for="lastname" class="block text-xs font-semibold text-gray-600 uppercase">Country</label>
+            {{form.country}}
+            </span>
+          </div>
+        
+        <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+          Sign up
+        </button>
+        <p class="flex justify-between inline-block mt-4 text-xs text-gray-500 cursor-pointer hover:text-black">Already registered?</p>
+      </form>
+    </div>
+  </div>
+{% endblock  %}
