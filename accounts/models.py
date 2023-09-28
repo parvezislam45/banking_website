@@ -7,7 +7,7 @@ from .constants import ACCOUNT_TYPE,GENDER
 class userBankAccounts(models.Model):
     user = models.OneToOneField(User,related_name='account',on_delete=models.CASCADE)
     accountType = models.CharField(max_length=50,choices=ACCOUNT_TYPE)
-    account_no = models.IntegerField(unique=True)
+    account_no = models.IntegerField(unique=True,null=True,blank=True)
     date_of_Birth = models.DateField(null=True,blank=True)
     gender = models.CharField(max_length=100,choices=GENDER)
     initial_deposit_date = models.DateField(auto_now_add=True)
