@@ -7,11 +7,11 @@
 
 <form method='post' action="">
 {% csrf_token %}
-<div class="mb-4">
+<div class="mb-4 ">
     <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">
         Amount
     </label>
-    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline" name="amount" id="amount" type="number" required placeholder="Amount">
+    <input class="shadow appearance-none border rounded w-64 py-2 px-3 text-gray-700 leading-tight border rounded-md border-gray-500 focus:outline-none focus:shadow-outline" name="amount" id="amount" type="number" required placeholder="Amount">
 </div>
 {% if form.amount.errors %} {% for error in form.amount.errors %}
 <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>

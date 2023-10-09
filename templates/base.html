@@ -8,12 +8,13 @@
   href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
     <title>Document</title>
 </head>
-<body>
-    <div class='max-w-screen-2xl mx-auto'>
+<body class='max-w-screen-2xl mx-auto'>
+    <div>
         {% include 'nav.html' %}
         {% block content %}
         
         {% endblock %}
+        {% include 'footer.html' %}
     </div>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
